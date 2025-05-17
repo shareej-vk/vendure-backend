@@ -49,10 +49,10 @@ export const config: VendureConfig = {
         cookieOptions: {
           secret: process.env.COOKIE_SECRET,
           maxAge: 60 * 60 * 24 * 7, // 30 days (in seconds)
-        //   sameSite: 'none',   // <--- required for cross-site cookies
-        //   secure: true, 
-          sameSite: 'lax',
-          secure: false,      
+           sameSite: 'none',   // <--- required for cross-site cookies
+           secure: true, 
+          //sameSite: 'lax',
+          //secure: false,      
         },
     },
     dbConnectionOptions: {
