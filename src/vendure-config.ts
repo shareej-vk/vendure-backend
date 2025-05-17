@@ -41,16 +41,18 @@ export const config: VendureConfig = {
         } : {}),
     },
     authOptions: {
-        tokenMethod: ['cookie'],
+        tokenMethod: 'cookie',
         superadminCredentials: {
             identifier: process.env.SUPERADMIN_USERNAME,
             password: process.env.SUPERADMIN_PASSWORD,
         },
         cookieOptions: {
+            domain: 'sveltekit-vendure-storefront.vercel.app',
           secret: process.env.COOKIE_SECRET,
           maxAge: 60 * 60 * 24 * 7, // 30 days (in seconds)
            sameSite: 'none',   // <--- required for cross-site cookies
            secure: true, 
+           path: '/',
           //sameSite: 'lax',
           //secure: false,      
         },
