@@ -21,7 +21,7 @@ export const config: VendureConfig = {
         adminApiPath: 'admin-api',
         shopApiPath: 'shop-api',
         cors: {
-            origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
+            origin: ['http://localhost:5173', 'https://sveltekit-vendure-storefront.vercel.app'],
             credentials: true, // if you use cookies/auth
             allowedHeaders: ['Content-Type', 'Authorization'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
