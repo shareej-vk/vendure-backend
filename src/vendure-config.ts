@@ -41,7 +41,7 @@ export const config: VendureConfig = {
         } : {}),
     },
     authOptions: {
-        tokenMethod: ['bearer', 'cookie'],
+        tokenMethod: ['cookie'],
         superadminCredentials: {
             identifier: process.env.SUPERADMIN_USERNAME,
             password: process.env.SUPERADMIN_PASSWORD,
@@ -49,8 +49,10 @@ export const config: VendureConfig = {
         cookieOptions: {
           secret: process.env.COOKIE_SECRET,
           maxAge: 60 * 60 * 24 * 7, // 30 days (in seconds)
-          sameSite: 'none',   // <--- required for cross-site cookies
-          secure: true,       // <--- required for 'none'
+        //   sameSite: 'none',   // <--- required for cross-site cookies
+        //   secure: true, 
+          sameSite: 'lax',
+          secure: false,      
         },
     },
     dbConnectionOptions: {
