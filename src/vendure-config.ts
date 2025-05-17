@@ -17,9 +17,15 @@ const serverPort = +process.env.PORT || 3000;
 
 export const config: VendureConfig = {
     apiOptions: {
-        port: serverPort,
+        port: +process.env.PORT || 3000,
         adminApiPath: 'admin-api',
         shopApiPath: 'shop-api',
+        cors: {
+            origin: ['http://localhost:5173', 'https://your-frontend-domain.com'],
+            credentials: true, // if you use cookies/auth
+            allowedHeaders: ['Content-Type', 'Authorization'],
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+          },
         // The following options are useful in development mode,
         // but are best turned off for production for security
         // reasons.
