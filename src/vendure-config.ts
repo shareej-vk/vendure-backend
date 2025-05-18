@@ -69,7 +69,7 @@ export const config: VendureConfig = {
         type: 'postgres',
         url: process.env.DATABASE_URL,
         ssl: { rejectUnauthorized: false },
-        synchronize: false,
+        synchronize: true,
       },
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
