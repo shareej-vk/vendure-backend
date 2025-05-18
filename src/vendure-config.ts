@@ -56,15 +56,21 @@ export const config: VendureConfig = {
         //   secure: false,      
         },
     },
+    // dbConnectionOptions: {
+    //     type: 'better-sqlite3',
+    //     // See the README.md "Migrations" section for an explanation of
+    //     // the `synchronize` and `migrations` options.
+    //     synchronize: false,
+    //     migrations: [path.join(__dirname, './migrations/*.+(js|ts)')],
+    //     logging: false,
+    //     database: path.join(__dirname, '../vendure.sqlite'),
+    // },
     dbConnectionOptions: {
-        type: 'better-sqlite3',
-        // See the README.md "Migrations" section for an explanation of
-        // the `synchronize` and `migrations` options.
+        type: 'postgres',
+        url: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
         synchronize: false,
-        migrations: [path.join(__dirname, './migrations/*.+(js|ts)')],
-        logging: false,
-        database: path.join(__dirname, '../vendure.sqlite'),
-    },
+      },
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
     },
